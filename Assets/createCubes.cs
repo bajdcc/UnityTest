@@ -23,7 +23,7 @@ public class createCubes : MonoBehaviour {
 				var cube = GameObject.CreatePrimitive (PrimitiveType.Cube);
 				cube.transform.localScale = new Vector3 (1, arr[i,j], 1);
 				cube.transform.position = new Vector3 (i * (m_Size + m_Padding), arr[i,j]/2.0f, j * (m_Size + m_Padding));
-				var material = new Material (Shader.Find("Unlit/Color"));
+				var material = new Material(Shader.Find("Legacy Shaders/Diffuse")); // 注意坑，不是所有shader默认都打包的，在Graphics Settings里面
 				material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 				cube.GetComponent<MeshRenderer> ().material = material;
 			}

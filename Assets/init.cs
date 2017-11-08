@@ -88,10 +88,10 @@ public class init : MonoBehaviour
 		var y = Input.GetAxis("Mouse Y");
 
 		// Adjust the look angle by an amount proportional to the turn speed and horizontal input.
-		m_LookAngleX += y*m_TurnSpeed;
+		m_LookAngleX -= y*m_TurnSpeed;
 		m_LookAngleY += x*m_TurnSpeed;
 
 		// Rotate the rig (the root object) around Y axis only:
-		transform.localRotation = Quaternion.Euler(-m_LookAngleX, m_LookAngleY, 0f);
+		transform.localRotation = Quaternion.Euler(m_LookAngleX, m_LookAngleY, 0f);
 	}
 }
